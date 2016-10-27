@@ -447,6 +447,7 @@ class CreativeItems{
 			["id" => Item::OBSERVER],
 			["id" => Item::HOPPER],
 			["id" => Item::SNOWBALL] #blamemojang
+                        ["id" => Item::ENDERPEARL]
 		],
 		self::CATEGORY_MISCELLANEOUS => [
 			["id" => Item::COAL],
