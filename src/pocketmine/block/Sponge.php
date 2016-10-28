@@ -26,6 +26,7 @@ namespace pocketmine\block;
 
 use pocketmine\level\Level;
 use pocketmine\math\Vector3;
+use pocketmine\item\Item;
 
 class Sponge extends Solid{
 
@@ -84,5 +85,11 @@ class Sponge extends Solid{
 			1 => "Wet Sponge",
 		];
 		return $names[$this->meta & 0x0f];
+	}
+
+	public function getDrops(Item $item) : array {
+		return [
+			[$this->id, $this->meta & 0x0f, 1],
+		];
 	}
 }

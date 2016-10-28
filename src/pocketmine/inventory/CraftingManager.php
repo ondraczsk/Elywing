@@ -944,6 +944,7 @@ class CraftingManager{
 		$this->registerRecipe(new FurnaceRecipe(Item::get(Item::HARDENED_CLAY, 0, 1), Item::get(Item::CLAY_BLOCK, 0, 1)));
 		$this->registerRecipe(new FurnaceRecipe(Item::get(Item::COOKED_RABBIT, 0, 1), Item::get(Item::RAW_RABBIT, 0, 1)));
 		$this->registerRecipe(new FurnaceRecipe(Item::get(Item::COOKED_MUTTON, 0, 1), Item::get(Item::RAW_MUTTON, 0, 1)));
+		$this->registerRecipe(new FurnaceRecipe(Item::get(Item::SPONGE, 0, 1), Item::get(Item::SPONGE, 1, 1)));
 		
 		
 	}
