@@ -396,7 +396,7 @@ class Server{
 	 * @return string
 	 */
 	public function getName() : string{
-		return "Genisys";
+		return "Elywing";
 	}
 
 	/**
@@ -474,15 +474,15 @@ class Server{
 	/**
 	 * @return string
 	 */
-	public function getiTXApiVersion(){
-		return \pocketmine\GENISYS_API_VERSION;
+	public function getH4PMApiVersion(){
+		return \pocketmine\ELYWING_API_VERSION;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGeniApiVersion(){
-		return \pocketmine\GENISYS_API_VERSION;
+	public function getElyApiVersion(){
+		return \pocketmine\ELYWING_API_VERSION;
 	}
 
 	/**
@@ -1584,16 +1584,24 @@ class Server{
 	}
 
 	public function about(){
-		$string = '
+		$string = "§b
+                ____          
+               |  __|_              _
+               | |__| |      _    _(_)_ __   ___
+               |  __| |_   _| |  | | | '_ \ / _ \
+               | |__| | | | | |/\| | | | | | (_) |
+               |____|_|\ \/ \__/\__/_|_| |_|\___ |
+                       _|  /                 __| |
+                      |___/                 |___/
 
-	§3Genisys§f is a fork of §bPocketMine-MP§f, made by §5iTX Technologies LLC§f
-	Version: §6' . $this->getPocketMineVersion() . '§f
-	Target client version: §b' . \pocketmine\MINECRAFT_VERSION . '§f
-	Source code: §dhttps://github.com/iTXTech/Genisys§f
-	';
+	§fA stable §e" . \pocketmine\MINECRAFT_VERSION . "§f fork of §3PocketMine-MP (pmmp)§f.
+			§fModified by §bH§e4§3PM§f.
+	    Source code: §3https://github.com/H4PM/Elywing§f
+	";
 	
 		$this->getLogger()->info($string);
 	}
+
 
 	public function loadAdvancedConfig(){
 		$this->playerMsgType = $this->getAdvancedProperty("server.player-msg-type", self::PLAYER_MSG_TYPE_MESSAGE);

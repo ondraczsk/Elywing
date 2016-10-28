@@ -74,10 +74,10 @@ namespace pocketmine {
 
 	const VERSION = ""; //will be set by CI to a git hash
 	const API_VERSION = "2.0.0";
-	const CODENAME = "Kyrios";
+	const CODENAME = "Aliby";
 	const MINECRAFT_VERSION = "v0.16.0.5 alpha";
 	const MINECRAFT_VERSION_NETWORK = "0.16.0.5";
-	const GENISYS_API_VERSION = '1.9.1';
+	const ELYWING_API_VERSION = '1.9.1';
 
 	/*
 	 * Startup code. Do not look at it, it may harm you.
