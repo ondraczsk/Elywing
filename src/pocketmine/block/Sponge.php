@@ -54,26 +54,28 @@ class Sponge extends Solid{
 	}
 
 	public function onUpdate($type){
-		if($type === Level::BLOCK_UPDATE_NORMAL){
-			$blockAbove = $this->getSide(Vector3::SIDE_UP)->getId();
-			$blockBeneath = $this->getSide(Vector3::SIDE_DOWN)->getId();
-			$blockNorth = $this->getSide(Vector3::SIDE_NORTH)->getId();
-			$blockSouth = $this->getSide(Vector3::SIDE_SOUTH)->getId();
-			$blockEast = $this->getSide(Vector3::SIDE_EAST)->getId();
-			$blockWest = $this->getSide(Vector3::SIDE_WEST)->getId();
+		if ($this->meta == 0) {
+			if($type === Level::BLOCK_UPDATE_NORMAL){
+				$blockAbove = $this->getSide(Vector3::SIDE_UP)->getId();
+				$blockBeneath = $this->getSide(Vector3::SIDE_DOWN)->getId();
+				$blockNorth = $this->getSide(Vector3::SIDE_NORTH)->getId();
+				$blockSouth = $this->getSide(Vector3::SIDE_SOUTH)->getId();
+				$blockEast = $this->getSide(Vector3::SIDE_EAST)->getId();
+				$blockWest = $this->getSide(Vector3::SIDE_WEST)->getId();
 
-			if($blockAbove === Block::WATER ||
-				$blockBeneath === Block::WATER ||
-				$blockNorth === Block::WATER ||
-				$blockSouth === Block::WATER ||
-				$blockEast === Block::WATER ||
-				$blockWest === Block::WATER){
-				$this->absorbWater($this);
-				$this->getLevel()->setBlock($this, Block::get(Block::SPONGE, 1), true, true);
-				return Level::BLOCK_UPDATE_NORMAL;
+				if($blockAbove === Block::WATER ||
+					$blockBeneath === Block::WATER ||
+					$blockNorth === Block::WATER ||
+					$blockSouth === Block::WATER ||
+					$blockEast === Block::WATER ||
+					$blockWest === Block::WATER){
+					$this->absorbWater($this);
+					$this->getLevel()->setBlock($this, Block::get(Block::SPONGE, 1), true, true);
+					return Level::BLOCK_UPDATE_NORMAL;
+				}
 			}
+			return false;
 		}
-		return false;
 	}
 
 	public function getName() : string{
