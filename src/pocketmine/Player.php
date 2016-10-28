@@ -1549,7 +1549,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 				$this->dataPacket($pk);
 				
 				if($add){
-					$this->getFloatingInventory()->addItem(clone $item);
+					$this->inventory->addItem(clone $item);
 				}
 				$entity->kill();
 			}elseif($entity instanceof DroppedItem){
@@ -1591,7 +1591,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 						$this->dataPacket($pk);
 
 						if($add){
-							$this->getFloatingInventory()->addItem(clone $item);
+							$this->inventory->addItem(clone $item);
 						}
 						$entity->kill();
 					}

@@ -103,6 +103,7 @@
 	const REDSTONE = 331;
 	const REDSTONE_DUST = 331;
 	const SNOWBALL = 332;
+       const ENDERPEARL = 368;
 	const BOAT = 333;
 	const LEATHER = 334;
 	
