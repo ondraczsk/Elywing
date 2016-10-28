@@ -1,4 +1,4 @@
-# ![PocketMine-MP](http://image.noelshack.com/fichiers/2016/43/1477490625-elybanner.png)
+# ![Elywing](http://image.noelshack.com/fichiers/2016/43/1477490625-elybanner.png)
 
 
 	This program is free software: you can redistribute it and/or modify
@@ -15,7 +15,13 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-__Elywing is a free, open-source software that creates Minecraft: Pocket Edition servers and allows extending its functionalities__
+__Elywing is a free, open-source software that creates Minecraft: Pocket Edition servers and allows extending its functionalities. Most of the original code was written by the PocketMine Team.__
+
+### Thanks to PocketMine-MP and Genisys.
+
+### [PocketMine-MP](http://github.com/iTXTech/Genisys/)
+
+### [Genisys](http://github.com/pmmp/PocketMine-MP/)
 
 
 ### Elywing, a fork of PocketMine-MP, modified by
@@ -37,6 +43,7 @@ __Elywing is a free, open-source software that creates Minecraft: Pocket Edition
 ### [Documentation](http://pocketmine-mp.readthedocs.org/)
 
 ### [Plugin Repository](http://plugins.pocketmine.net/)
+
 
 <!--## [FAQ: Frequently Asked Questions](https://github.com/PocketMine/PocketMine-MP/wiki/Frequently-Asked-Questions)-->
 
