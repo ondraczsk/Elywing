@@ -26,13 +26,16 @@ namespace pocketmine\entity;
 
 use pocketmine\network\protocol\AddEntityPacket;
 use pocketmine\Player;
+use pocketmine\item\Item as ItemItem;
 
 class Wither extends FlyingAnimal{
 	const NETWORK_ID = 52;
 
-	public $width = 6;
-	public $length = 6;
-	public $height = 6;
+	public $width = 0.72;
+	public $length = 6; //TODO: Find the good one.
+	public $height = 2;
+
+	public $dropExp = 50;
 	
 	public function getName() : string{
 		return "Wither";
@@ -59,5 +62,12 @@ class Wither extends FlyingAnimal{
 		$player->dataPacket($pk);
 
 		parent::spawnTo($player);
+	}
+
+	//TODO: Add his spawn scenario and his death scenario
+
+	public function getDrops(){
+		$drops = [ItemItem::get(ItemItem::NETHER_STAR, 0, 1)];
+		return $drops;
 	}
 }
