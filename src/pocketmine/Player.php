@@ -3530,7 +3530,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 					$message = $reason;
 				}
 			}
-			$this->close($ev->getQuitMessage(), $message);
+ 			$this->close($ev->getQuitMessage(), $message);
 
 			return true;
 		}
@@ -3540,7 +3540,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 
 	/**
 	 * @param Item $item
-	 *
+ 	 *
 	 * Drops the specified item in front of the player.
 	 */
 	public function dropItem(Item $item){
@@ -3561,6 +3561,8 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		$ev = new PlayerDropItemEvent($this, $item);
 		$this->server->getPluginManager()->callEvent($ev);
 		if($ev->isCancelled()){
+			$this->getFloatingInventory()->removeItem($item);
+			$this->getInventory()->addItem($item);
 			return;
 		}
 
