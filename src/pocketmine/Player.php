@@ -1003,11 +1003,11 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		$pos = $ev->getRespawnPosition();
 		if($pos->getY() < 127) $pos = $pos->add(0, 0.2, 0);
 
-		/*$pk = new RespawnPacket();
+		$pk = new RespawnPacket();
 		$pk->x = $pos->x;
 		$pk->y = $pos->y;
 		$pk->z = $pos->z;
-		$this->dataPacket($pk);*/
+		$this->dataPacket($pk);
 
 		$pk = new PlayStatusPacket();
 		$pk->status = PlayStatusPacket::PLAYER_SPAWN;
@@ -1355,7 +1355,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 	 *
 	 * @return bool
 	 */
-		public function setGamemode(int $gm, bool $client = false){
+		public function setGamemode(int $gm, $client = false){
 			if($gm < 0 or $gm > 3 or $this->gamemode === $gm){
 			return false;
 		}
@@ -1445,6 +1445,9 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 	
 	public function setFlying(bool $flying){
 		$this->isFlying = $flying;
+		if ($flying === false){
+			$this->teleport($this->temporalVector->setComponents($this->x, $this->y + 0.1, $this->z));
+		}
 		$this->sendSettings();
 	}
 
@@ -2745,6 +2748,41 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 						break;
 					case PlayerActionPacket::ACTION_STOP_SLEEPING:
 						$this->stopSleep();
+						break;
+					case PlayerActionPacket::ACTION_RESPAWN:
+						if($this->spawned === false or $this->isAlive() or !$this->isOnline()){
+							break;
+						}
+						if($this->server->isHardcore()){
+							$this->setBanned(true);
+							break;
+						}
+						$this->craftingType = 0;
+						$this->server->getPluginManager()->callEvent($ev = new PlayerRespawnEvent($this, $this->getSpawn()));
+						$this->teleport($ev->getRespawnPosition());
+						$this->setSprinting(false, true);
+						$this->setSneaking(false);
+						$this->extinguish();
+						$this->dataProperties[self::DATA_AIR] = [self::DATA_TYPE_SHORT, 300];
+						//$this->setDataProperty(self::DATA_AIR, self::DATA_TYPE_SHORT, 300);
+						$this->deadTicks = 0;
+						$this->dead = false;
+						$this->noDamageTicks = 60;
+						$this->setHealth($this->getMaxHealth());
+						$this->setFood(20);
+						$this->starvationTick = 0;
+						$this->foodTick = 0;
+						$this->lastSentVitals = 10;
+						$this->foodUsageTime = 0;
+						$this->removeAllEffects();
+						$this->sendData($this);
+						$this->sendSettings();
+						$this->inventory->sendContents($this);
+						$this->inventory->sendArmorContents($this);
+						$this->blocked = false;
+						$this->scheduleUpdate();
+						
+						$this->server->getPluginManager()->callEvent(new PlayerRespawnAfterEvent($this));
 						break;
 					case PlayerActionPacket::ACTION_SPAWN_SAME_DIMENSION:
 					case PlayerActionPacket::ACTION_SPAWN_OVERWORLD:
