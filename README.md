@@ -19,9 +19,9 @@ __Elywing is a free, open-source software that creates Minecraft: Pocket Edition
 
 ### Thanks to PocketMine-MP and Genisys.
 
-### [PocketMine-MP](http://github.com/iTXTech/Genisys/)
+### [PocketMine-MP](http://github.com/pmmp/PocketMine-MP/)
 
-### [Genisys](http://github.com/pmmp/PocketMine-MP/)
+### [Genisys](http://github.com/iTXTech/Genisys/)
 
 
 ### Elywing, a fork of PocketMine-MP, modified by
