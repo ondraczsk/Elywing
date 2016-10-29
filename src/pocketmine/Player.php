@@ -2202,7 +2202,7 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		$pk->entityUniqueId = 0;
 		$pk->entityRuntimeId = 0;
 		$pk->generator = 1; //0 old, 1 infinite, 2 flat
-		$pk->worldGamemode = $this->gamemode & 0x01; //assume creative for now
+		//$pk->worldGamemode = $this->gamemode & 0x01; //assume creative for now
 		$pk->difficulty = $this->server->getDifficulty(); //TODO: implement this properly
 		$pk->spawnX = $spawnPosition->getFloorX();
 		$pk->spawnY = $spawnPosition->getFloorY();
