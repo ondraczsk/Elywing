@@ -1355,8 +1355,8 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 	 *
 	 * @return bool
 	 */
-		public function setGamemode(int $gm, $client = false){
-			if($gm < 0 or $gm > 3 or $this->gamemode === $gm){
+	public function setGamemode(int $gm, $client = false){
+		if($gm < 0 or $gm > 3 or $this->gamemode === $gm){
 			return false;
 		}
 
@@ -4388,6 +4388,4 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		}
 		return $pk;
 	}
-
-
 }
