@@ -103,7 +103,6 @@
 	const REDSTONE = 331;
 	const REDSTONE_DUST = 331;
 	const SNOWBALL = 332;
-       const ENDERPEARL = 368;
 	const BOAT = 333;
 	const LEATHER = 334;
 	
@@ -139,7 +138,7 @@
 	const RAW_CHICKEN = 365;
 	const COOKED_CHICKEN = 366;
 	const ROTTEN_FLESH = 367;
-
+	const ENDERPEARL = 368;
 	const BLAZE_ROD = 369;
 	const GHAST_TEAR = 370;
 	const GOLD_NUGGET = 371; const GOLDEN_NUGGET = 371;
