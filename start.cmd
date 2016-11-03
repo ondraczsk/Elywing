@@ -12,12 +12,17 @@ if exist bin\php\php.exe (
 if exist Elywing.phar (
 	set POCKETMINE_FILE=Elywing.phar
 ) else (
+	if exist PocketMine-MP.phar (
+		set POCKETMINE_FILE=PocketMine-MP.phar
+) else (
 	if exist src\pocketmine\PocketMine.php (
 		set POCKETMINE_FILE=src\pocketmine\PocketMine.php
 	) else (
 		echo "Couldn't find a valid Elywing installation"
 		pause
-		exit 1
+                exit 8
+		    )
+	    )
 	)
 )
 
