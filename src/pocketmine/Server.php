@@ -3,7 +3,7 @@
 /*
  *
  *  ____            _        _   __  __ _                  __  __ ____
- * |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \
+ * |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \G
  * | |_) / _ \ / __| |/ / _ \ __| |\/| | | '_ \ / _ \_____| |\/| | |_) |
  * |  __/ (_) | (__|   <  __/ |_| |  | | | | | |  __/_____| |  | |  __/
  * |_|   \___/ \___|_|\_\___|\__|_|  |_|_|_| |_|\___|     |_|  |_|_|
@@ -1670,7 +1670,7 @@ class Server{
 	}
 
 	public function isSynapseEnabled() : bool {
-		return (bool) $this->synapseConfig["enabled"];
+		return $this->getSynapse() !== null;
 	}
 
 	/**
@@ -2060,7 +2060,11 @@ class Server{
 	 * @return Synapse
 	 */
 	public function getSynapse(){
-		return $this->synapse;
+		$plugin = $this->pluginManager->getPlugin('SynapsePM');
+ 		return null;		 +		if ($plugin === null or $plugin->isDisabled()) {
+ 			return null;
+ 		}
+ 		return $plugin->getSynapse();
 	}
 
 	/**
