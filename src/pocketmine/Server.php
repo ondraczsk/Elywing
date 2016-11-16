@@ -1585,7 +1585,7 @@ class Server{
 
 	public function about(){
 		$string = "§b
-                ____          
+                ____
                |  __|_              _
                | |__| |      _    _(_)_ __   ___
                |  __| |_   _| |  | | | '_ \ / _ \
@@ -1598,7 +1598,7 @@ class Server{
 			§fModified by §bH§e4§3PM§f.
 	    Source code: §3https://github.com/H4PM/Elywing§f
 	";
-	
+
 		$this->getLogger()->info($string);
 	}
 
@@ -2061,10 +2061,11 @@ class Server{
 	 */
 	public function getSynapse(){
 		$plugin = $this->pluginManager->getPlugin('SynapsePM');
- 		return null;		 +		if ($plugin === null or $plugin->isDisabled()) {
+		if ($plugin === null or $plugin->isDisabled()) {
  			return null;
+ 		}else {
+ 			return $plugin->getSynapse();
  		}
- 		return $plugin->getSynapse();
 	}
 
 	/**
