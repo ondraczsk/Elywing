@@ -512,21 +512,20 @@ class Level implements ChunkManager, Metadatable{
 	final public function getId() : int{
 		return $this->levelId;
 	}
-
+	
 	public function close(){
-
+		
 		if($this->getAutoSave()){
 			$this->save();
 		}
-
-		foreach($this->chunks as $chunk){
+		
+		foreach($this->chunks as $chunk){$
 			$this->unloadChunk($chunk->getX(), $chunk->getZ(), false);
 		}
-
+		
 		$this->unregisterGenerator();
-
+		
 		$this->provider->close();
-		$this->provider = null;
 		$this->blockMetadata = null;
 		$this->blockCache = [];
 		$this->temporalPosition = null;
