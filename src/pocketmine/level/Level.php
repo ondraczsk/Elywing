@@ -526,6 +526,8 @@ class Level implements ChunkManager, Metadatable{
 		$this->unregisterGenerator();
 		
 		$this->provider->close();
+		//fixed? github.com/H4PM/Elywing/issues/114
+		$this->provider = null;
 		$this->blockMetadata = null;
 		$this->blockCache = [];
 		$this->temporalPosition = null;
