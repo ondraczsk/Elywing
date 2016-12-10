@@ -1,5 +1,5 @@
 # ![Elywing](http://image.noelshack.com/fichiers/2016/43/1477490625-elybanner.png)
-# !Elywing does not support 0.17 - we will support 0.17 on inital release on all plataforms. 
+> Elywing does not support 0.17 - we will update our software once 0.17 has been updated on all platforms. 
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Lesser General Public License as published by
