@@ -1808,7 +1808,7 @@ class Server{
 				"spawn-animals" => true,
 				"spawn-mobs" => true,
 				"gamemode" => 0,
-				"force-gamemode" => false,
+				"force-gamemode" => true,
 				"hardcore" => false,
 				"pvp" => true,
 				"difficulty" => 1,
