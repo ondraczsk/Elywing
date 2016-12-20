@@ -515,19 +515,16 @@ class Level implements ChunkManager, Metadatable{
 	
 	public function close(){
 		
-		if($this->getAutoSave()){
-			$this->save();
-		}
+		if($this->getAutoSave()) $this->save();
 		
-		foreach($this->chunks as $chunk){$
+		foreach($this->chunks as $chunk){
 			$this->unloadChunk($chunk->getX(), $chunk->getZ(), false);
 		}
 		
 		$this->unregisterGenerator();
 		
 		$this->provider->close();
-		//fixed? github.com/H4PM/Elywing/issues/114
-		$this->provider = null;
+		//$this->provider = null;
 		$this->blockMetadata = null;
 		$this->blockCache = [];
 		$this->temporalPosition = null;
