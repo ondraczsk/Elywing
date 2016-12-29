@@ -161,7 +161,7 @@ interface BlockIds{
 	const BIRCH_WOOD_STAIRS = 135; const BIRCH_WOODEN_STAIRS = 135;
 	const JUNGLE_WOOD_STAIRS = 136; const JUNGLE_WOODEN_STAIRS = 136;
 
-	const BEACON_BLOCK = 138;
+	const BEACON = 138; const BEACON_BLOCK = 138;
 	const COBBLESTONE_WALL = 139; const COBBLE_WALL = 139; const STONE_WALL = 139;
 	const FLOWER_POT_BLOCK = 140;
 	const CARROT_BLOCK = 141;
@@ -183,7 +183,7 @@ interface BlockIds{
 	const DOUBLE_WOOD_SLAB = 157; const DOUBLE_WOODEN_SLAB = 157; const DOUBLE_WOOD_SLABS = 157; const DOUBLE_WOODEN_SLABS = 157;
 	const WOOD_SLAB = 158; const WOODEN_SLAB = 158; const WOOD_SLABS = 158; const WOODEN_SLABS = 158;
 	const STAINED_CLAY = 159; const STAINED_HARDENED_CLAY = 159;
-	const STAINED_GLASS_PANE = 160; const STAINED_GLASS_PANEL = 160; //We can add their textures but Mojang didn't added their and didn't added on the Creative Mode ! #blamemojang
+	const STAINED_GLASS_PANE = 160; const STAINED_GLASS_PANEL = 160; //We can add their textures but Mojang didn't added them and didn't added on the Creative Mode ! #blamemojang
 	const LEAVES2 = 161;
 	const WOOD2 = 162; const TRUNK2 = 162; const LOG2 = 162;
 	const ACACIA_WOOD_STAIRS = 163; const ACACIA_WOODEN_STAIRS = 163;
@@ -192,7 +192,7 @@ interface BlockIds{
 	
 	const IRON_TRAPDOOR = 167;
 	const PRISMARINE_BLOCK = 168;
-	const SEA_LANTERN_BLOCK = 169;
+	const SEA_LANTERN = 169; const SEA_LANTERN_BLOCK = 169;
 	const HAY_BALE = 170;
 	const CARPET = 171;
 	const HARDENED_CLAY = 172;
@@ -229,7 +229,7 @@ interface BlockIds{
 	const END_GATEWAY = 209;
 
 	const CHORUS_PLANT = 240;
-	const STAINED_GLASS = 241; //We can add their textures but Mojang didn't added their and didn't added on the Creative Mode ! #blamemojang
+	const STAINED_GLASS = 241; //We can add their textures but Mojang didn't added them and didn't added on the Creative Mode ! #blamemojang
 	const PODZOL = 243;
 	const BEETROOT_BLOCK = 244;
 	const STONECUTTER = 245;

@@ -24,22 +24,17 @@
 
 namespace pocketmine\block;
 
-//use pocketmine\inventory\BeaconInventory;
 use pocketmine\item\Item;
 use pocketmine\Player;
 use pocketmine\item\Tool;
 
-class BeaconBlock extends Solid{
+class Beacon extends Solid{
 
-	protected $id = self::BEACON_BLOCK;
+	protected $id = self::BEACON;
 
 	public function __construct($meta = 0){
 		$this->meta = $meta;
 	}
-
-	/*public function canBeActivated() : bool{
-		return true;
-	}*/
 
 	public function getLightLevel(){
 		return 15;
@@ -50,15 +45,6 @@ class BeaconBlock extends Solid{
 	}
 
 	public function getName() : string{
-        return "Beacon Block";
+        return "Beacon";
 	}
-
-	/*public function onActivate(Item $item, Player $player = null){
-		if($player instanceof Player){
-			$player->addWindow(new BeaconInventory($this));
-		}
-
-		return true;
-	}*/
-
 }

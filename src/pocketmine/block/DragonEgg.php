@@ -1,4 +1,5 @@
 <?php
+
 /*
  *
  *  ____          
@@ -15,29 +16,44 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * @author erkam2002
+ * @author H4PM Team / erkam2002
  * @link http://www.github.net/H4PM
  * 
  *
 */
+
 namespace pocketmine\block;
+
 use pocketmine\item\Item;
-use pocketmine\item\Tool;
-class DragonEgg extends Solid{
+
+class DragonEgg extends Fallable {
+
 	protected $id = self::DRAGON_EGG;
+
 	public function __construct(){
+
 	}
+
 	public function getName() : string{
 		return "Dragon Egg";
 	}
-	public function getHardness(){
-		return -1;
+
+	public function getHardness() {
+		return 3;
 	}
-	
+
 	public function getResistance(){
-		return 18000000;
+		return 4.5;
 	}
-	public function isBreakable(Item $item){
-		return false;
+
+	public function getLightLevel(){
+		return 1;
 	}
+
+	public function getDrops(Item $item) : array {
+		return [
+			[Item::DRAGON_EGG, 0 ,1],
+		];
+	}
+
 }
