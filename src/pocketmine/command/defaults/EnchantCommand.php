@@ -63,7 +63,7 @@ class EnchantCommand extends VanillaCommand{
 
 		$enchantment = Enchantment::getEnchantment($enchantId);
 		if($enchantment->getId() === Enchantment::TYPE_INVALID){
-			$enchantment = Enchantment::getEnchantmentByName($enchantId);
+			$enchantment = Enchantment::getEffectByName($enchantId);
 			if($enchantment->getId() === Enchantment::TYPE_INVALID){
 	    		$sender->sendMessage(new TranslationContainer("commands.enchant.notFound", [$enchantment->getId()]));
 				return true;
