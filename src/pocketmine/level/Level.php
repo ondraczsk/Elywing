@@ -523,7 +523,7 @@ class Level implements ChunkManager, Metadatable{
 		$this->unregisterGenerator();
 
 		$this->provider->close();
-		$this->provider = null;
+		//$this->provider = null; Nope, break :/ 
 		$this->blockMetadata = null;
 		$this->blockCache = [];
 		$this->temporalPosition = null;
