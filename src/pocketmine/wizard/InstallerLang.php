@@ -30,7 +30,10 @@ class InstallerLang{
 		"jpn" => "日本語",
 		"rus" => "Русский",
 		"ita" => "Italiano",
+		"ukr" => "Українська мова",
+		"fra" => "Francais",
 		"kor" => "한국어",
+		"ces" => "Česky/Czech",
 		"deu" => "Deutsch"
 	];
 	private $texts = [];
