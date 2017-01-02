@@ -847,8 +847,8 @@ class Item implements ItemIds{
 		return $this->meta;
 	}
 
-	public function setDamage(int $meta){
-		$this->meta = $meta !== -1 ? $meta & 0xFFFF : -1;
+	public function setDamage($meta){
+		$this->meta = $meta !== null ? $meta & 0xFFFF : null;
 	}
 
 	public function hasAnyDamageValue() : bool{
