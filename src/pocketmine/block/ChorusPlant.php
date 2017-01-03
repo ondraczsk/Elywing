@@ -34,11 +34,13 @@ class ChorusPlant extends Crops{
 	public function __construct($meta = 0){
 		$this->meta = $meta;
 	}
-    public function getHardness(){
-	return 0.4;
+	
+    	public function getHardness(){
+		return 0.4;
+	}
 	
 	public function getToolType(){
-	return Tool::TYPE_AXE;
+		return Tool::TYPE_AXE;
 	}
 
 	public function getName() : string{
