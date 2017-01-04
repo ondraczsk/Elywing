@@ -27,15 +27,15 @@ namespace pocketmine\block;
 use pocketmine\item\Item;
 use pocketmine\item\enchantment\enchantment;
 
-class ChorusPlant extends Crops{
+class ChorusPlant extends Crops{//crops? it wont grow!
 
 	protected $id = self::CHORUS_PLANT;
 
 	public function __construct($meta = 0){
 		$this->meta = $meta;
 	}
-	
-    	public function getHardness(){
+
+    public function getHardness(){
 		return 0.4;
 	}
 	
@@ -43,7 +43,7 @@ class ChorusPlant extends Crops{
 		return Tool::TYPE_AXE;
 	}
 
-	public function getName() : string{
+	public function getName(){
 		return "Chorus Plant";
 	}
 

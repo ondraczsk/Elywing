@@ -42,12 +42,13 @@ use pocketmine\inventory\Fuel;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\level\Level;
 use pocketmine\nbt\NBT;
+use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\ShortTag;
 use pocketmine\nbt\tag\StringTag;
-use pocketmine\nbt\tag\ByteTag;
+use pocketmine\nbt\tag\Tag;
 use pocketmine\utils\Config;
 
 class Item implements ItemIds{
@@ -808,7 +809,7 @@ class Item implements ItemIds{
 		$this->count = $count;
 	}
 
-	final public function getName() : string{
+	final public function getName(){
 		return $this->hasCustomName() ? $this->getCustomName() : $this->name;
 	}
 
@@ -847,8 +848,8 @@ class Item implements ItemIds{
 		return $this->meta;
 	}
 
-	public function setDamage($meta){
-		$this->meta = $meta !== null ? $meta & 0xFFFF : null;
+	public function setDamage(int $meta){
+		$this->meta = $meta !== -1 ? $meta & 0xFFFF : -1;
 	}
 
 	public function hasAnyDamageValue() : bool{

@@ -62,9 +62,8 @@ class AddPlayerPacket extends DataPacket{
 		$this->putLFloat($this->headYaw ?? $this->yaw);
 		$this->putLFloat($this->yaw);
 		$this->putSlot($this->item);
-
 		$meta = Binary::writeMetadata($this->metadata);
 		$this->put($meta);
 	}
-	
+
 }

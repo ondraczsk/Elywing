@@ -132,7 +132,8 @@ class Dropper extends Spawnable implements InventoryHolder, Container, Nameable{
 	 */
 	public function setItem($index, Item $item){
 		$i = $this->getSlotIndex($index);
-                $d = $item->nbtSerialize($index);
+
+		$d = $item->nbtSerialize($index);
 
 		if($item->getId() === Item::AIR or $item->getCount() <= 0){
 			if($i >= 0){
@@ -159,7 +160,7 @@ class Dropper extends Spawnable implements InventoryHolder, Container, Nameable{
 		return $this->inventory;
 	}
 
-	public function getName() : string{
+	public function getName(){
 		return isset($this->namedtag->CustomName) ? $this->namedtag->CustomName->getValue() : "Dropper";
 	}
 
@@ -235,8 +236,6 @@ class Dropper extends Spawnable implements InventoryHolder, Container, Nameable{
 			}
 
 			$itemTag = $needItem->nbtSerialize(null, "Item");
-			$itemTag->setName("Item");
-
 
 			$nbt = new CompoundTag("", [
 				"Pos" => new ListTag("Pos", [
